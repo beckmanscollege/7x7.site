@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>7x7</title>
+    <link id="favicon" rel="icon" href="https://cdn.glitch.global/9c242df3-cd11-4aa5-ab53-9653fd6e4ad4/favicon.ico3?v=1707813003946" type="image/x-icon"
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style_new.css" />
+    <script src="/script.js"></script>
+  </head>
+  <body>
+    <main style="justify-content: flex-start">
+        <!--    <h1>
+        Words
+      </h1> !-->
+      <div class="archive-wrapper"
+      >
+        {{#each words}}
+          <a href="/archive/{{this.word.id}}" class="archive-grid-container">
+              <div class="grid">
+              {{#each this.grid}}
+                <svg
+                  width="95"
+                  height="95"
+                  viewbox="0 0 95 95"
+                  class="gridItem color-{{this.color}}"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style="grid-row-start: {{this.row}}; grid-column-start: {{this.column}}"
+                >
+                {{#eq this.shape "square"}}
+                  <rect width="95" height="95" class="square"></rect>
+                {{else}}
+                  {{#eq this.shape "triangle"}}
+                    <path d="M47.5 0L95 95L0 95L47.5 0Z" class="triangle"></path>
+                  {{else}}
+                    {{#eq this.shape "circle"}}
+                      <circle cx="47.5" cy="47.5" r="47.5" class="circle"></circle>
+                    {{/eq}}
+                  {{/eq}}
+                {{/eq}}
+                </svg>
+              {{/each}}
+            </div>
+              <h2>
+                {{this.word.name}}
+              </h2>
+          </a>
+        {{/each}}
+      </div>
+      <div class="button-container">
+        <a href="/" class="icon-button color-lightgray">
+          <img
+            src="https://cdn.glitch.global/9c242df3-cd11-4aa5-ab53-9653fd6e4ad4/Home.svg?v=1707430000737"
+          />
+        </a>
+        <div class="menu-button" style="width: 150px;">
+       <!--   <img
+            style="position:absolute; left: 0; margin-left: 8px;"
+            src="https://cdn.glitch.global/9c242df3-cd11-4aa5-ab53-9653fd6e4ad4/Image.svg?v=1707430560255"
+          /> !-->
+          Select category
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>

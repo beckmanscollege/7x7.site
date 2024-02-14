@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <title>7x7</title>
+    <link id="favicon" rel="icon" href="https://cdn.glitch.global/9c242df3-cd11-4aa5-ab53-9653fd6e4ad4/favicon.ico2?v=1707813002974" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style_new.css" />
+    <link rel="stylesheet" href="/mobile.css" />
+    <script src="/script.js"></script>
+  </head>
+  <script type="text/javascript">
+    {{#each word}}
+      words.push({ id: {{this.id}}, name: "{{this.name}}" });
+    {{/each}}
+  </script>
+  <body>
+    <main class="game-container">
+      <div class="grid">
+  
+          {{#each loop}}
+          {{#each this}}
+            <svg
+              width="95"
+              height="95"
+              viewbox="0 0 95 95"
+              class="gridItem color-lightgray"
+              xmlns="http://www.w3.org/2000/svg"
+              style="grid-row-start: {{inc @../index}}; grid-column-start: {{inc @index}}"
+            >
+              <!-- SVG content -->
+              <rect width="95" height="95" class="square hidden"></rect>
+              <path d="M47.5 0L95 95L0 95L47.5 0Z" class="triangle hidden"></path>
+              <circle cx="47.5" cy="47.5" r="47.5" class="circle"></circle>
+            </svg>
+          {{/each}}
+        {{/each}}
+        
+        
+      </div>
+      <div class="left-menu">
+        <div class="buttons">
+
+          <button class="button color-lightgray" onclick="shuffleWord()">
+            <img style="width: 13; height: 13;"
+              src="https://cdn.glitch.global/9c242df3-cd11-4aa5-ab53-9653fd6e4ad4/Shuffle.svg?v=1707430456945"
+            />
+          </button>
+
+          <button
+            class="button color-lightgray"
+            onclick="saveGrid()"
+            title="Save image"
+          >
+            <img style="width: 15;"
+              src="https://cdn.glitch.global/9c242df3-cd11-4aa5-ab53-9653fd6e4ad4/Submit.svg?v=1707430457276"
+            />
+          </button>
+        </div>
+
+        <div class="shape-container">
+          <div id="buttonCircle" class="button shapeButton color-lightgray">
+            <img style="width: 20;"
+              src="https://cdn.glitch.global/d6cce65c-4038-4167-aba3-8a350e26152b/circle.svg?v=1706033361740"
+            />
+          </div>
+
+          <div id="buttonSquare" class="button shapeButton color-lightgray">
+            <img style="width: 20;"
+              src="https://cdn.glitch.global/d6cce65c-4038-4167-aba3-8a350e26152b/square.svg?v=1706033361094"
+            />
+          </div>
+
+          <div id="buttonTriangle" class="button shapeButton color-lightgray">
+            <img style="width: 20;"
+              src="https://cdn.glitch.global/d6cce65c-4038-4167-aba3-8a350e26152b/triangle.svg?v=1706033359870"
+            />
+          </div>
+
+          <button class="button color-lightgray" onclick="resetGrid()">
+            <!-- Tar bort hela cirkeln, ej stylingen !-->
+            <img style="width: 20;"
+              src="https://cdn.glitch.global/d6cce65c-4038-4167-aba3-8a350e26152b/x.svg?v=1706033360486"
+            />
+          </button>
+          <div
+            class="button colorButton color-lightgray"
+            data-color="lightgray"
+          ></div>
+          <div class="button colorButton color-red" data-color="red"></div>
+          <div class="button colorButton color-green" data-color="green"></div>
+          <div class="button colorButton color-blue" data-color="blue"></div>
+          <div class="button colorButton color-pink" data-color="pink"></div>
+          <div
+            class="button colorButton color-yellow"
+            data-color="yellow"
+          ></div>
+          <div class="button colorButton color-black" data-color="black"></div>
+          <div
+            class="button colorButton color-orange"
+            data-color="orange"
+          ></div>
+          <div
+            class="button colorButton color-lightblue"
+            data-color="lightblue"
+          ></div>
+                  <div
+            class="button colorButton color-purple"
+            data-color="purple"
+          ></div>
+                         <div
+            class="button colorButton color-brown"
+            data-color="brown"
+          ></div>
+          
+                            <div
+            class="button colorButton color-gray"
+            data-color="gray"
+          ></div>
+          
+                                     <div
+            class="button colorButton color-beige"
+            data-color="beige"
+          ></div>
+          
+                                         <div
+            class="button colorButton color-darkgreen"
+            data-color="darkgreen"
+          ></div>
+          
+        </div>
+      </div>
+
+      <div class="button-container">
+
+        <a href="/" class="icon-button color-lightgray">
+
+          <img
+            src="https://cdn.glitch.global/9c242df3-cd11-4aa5-ab53-9653fd6e4ad4/Home.svg?v=1707430000737"
+          />
+
+        </a>
+
+        <div class="menu-button" style="width: 150px;" onclick="shuffleWord()">
+
+          <img
+            style="position:absolute; left: 0; margin-left: 8px;"
+            src="https://cdn.glitch.global/9c242df3-cd11-4aa5-ab53-9653fd6e4ad4/shuffle2.svg?v=1707757108877"
+          />
+          <span id="word-container">
+            {{word.name}}
+          </span>
+
+        </div>
+
+      </div>
+    </main>
+
+  </body>
+</html>
